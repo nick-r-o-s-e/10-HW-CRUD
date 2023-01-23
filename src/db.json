@@ -1,0 +1,102 @@
+{
+  "recipes": [
+    {
+      "id": 1,
+      "image": "https://www.allrecipes.com/thmb/e6gb5X3qhyYKGkRbjtelS4txof8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/25080-mmmmm-brownies-ddmfs-1x1-0074-a5079120061543be81bfc4a6776aa0f7.jpg",
+      "title": "Brownies",
+      "ingredients": [
+        [
+          "½",
+          "cup white sugar"
+        ],
+        [
+          "2",
+          "tablespoons butter"
+        ],
+        [
+          "2",
+          "tablespoons water"
+        ],
+        [
+          "1 ½",
+          "cups semisweet chocolate chips"
+        ],
+        [
+          "2",
+          "large eggs, beaten"
+        ],
+        [
+          "½",
+          "teaspoon vanilla extract"
+        ],
+        [
+          "⅔",
+          "cup all-purpose flour"
+        ],
+        [
+          "½",
+          "teaspoon salt"
+        ],
+        [
+          "¼",
+          "teaspoon baking soda"
+        ]
+      ],
+      "prepTime": "25 mins",
+      "coocTime": "35mins",
+      "servings": "16",
+      "directions": [
+        "Preheat the oven to 325 degrees F (165 degrees C). Grease an 8-inch square pan.",
+        "Combine sugar, butter, and water in a medium saucepan; cook and stir over medium heat until boiling. Remove from heat and stir in chocolate chips until melted and smooth; mix in eggs and vanilla. Combine flour, salt, and baking soda; stir into the chocolate mixture. Spread brownie batter evenly into the prepared pan.",
+        "Bake in the preheated oven until top is dry and edges have started to pull away from the sides of the pan, about 20 to 30 minutes. Let cool completely before cutting into squares."
+      ]
+    },
+    {
+      "image": "https://img.taste.com.au/rzQh6Xgx/taste/2016/11/easy-molten-chocolate-souffle-58756-1.jpeg",
+      "title": "Chocolate Souffle",
+      "ingredients": [
+        [
+          "1/2 c. (1 stick)",
+          "butter, cut into tablespoons, plus more for dish"
+        ],
+        [
+          "6 tbsp.",
+          "granulated sugar, plus more for dish"
+        ],
+        [
+          "8 oz.",
+          "semisweet chocolate, roughly chopped"
+        ],
+        [
+          "1 tsp.",
+          "pure vanilla extract"
+        ],
+        [
+          "1 tsp.",
+          "kosher salt "
+        ],
+        [
+          "4",
+          "large eggs, separated "
+        ],
+        [
+          "1 tsp.",
+          "Powdered sugar, for serving"
+        ]
+      ],
+      "prepTime": "10 mins",
+      "coocTime": "55 mins",
+      "servings": "4",
+      "directions": [
+        "Preheat oven to 375°. Grease the inside of four 6-ounce ramekins well with butter including the top of the outside rim. Sprinkle a little sugar in each and tap it around to coat the inside well. Dump out any excess sugar. Place on a small baking sheet. ",
+        "Create a double boiler by placing a large bowl over a pot of simmering water, ensuring that the bottom of the bowl does not touch water. Add chocolate and butter to bowl and stir until completely melted. Remove from heat and stir in vanilla and salt. Let cool while you whip egg whites.",
+        "Add egg whites to a medium bowl and beat with a hand mixer. Once at soft peaks start adding sugar slowly, 1 tablespoon at a time. Continue beating until egg whites reach stiff peaks. ",
+        "Add egg yolks one at a time to cooled chocolate, whisking well after each one. Add about ½ cup of whipped egg whites to chocolate and stir until just combined. Add the remaining egg whites in 2 batches, gently folding in after each addition just until no white streaks remain. ",
+        "Gently pour batter into prepared ramekins, filling just below the top rim and smooth tops. ",
+        "Bake until soufflés have risen tall and are just slightly wobbly, about 20 minutes.",
+        "Dust with powdered sugar and serve immediately."
+      ],
+      "id": 2
+    }
+  ]
+}

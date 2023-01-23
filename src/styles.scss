@@ -1,0 +1,207 @@
+body {
+  background-color: #ffa880;
+  position: relative;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  padding: 100px 40px;
+}
+
+.container__recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1400px;
+  gap: 40px;
+  @media screen and (max-width: 735px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-recipe {
+cursor: pointer;
+  border-radius: 6px;
+  background-color: #615d5bc0;
+  align-self: stretch;
+  justify-self: stretch;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  i {
+    pointer-events: none;
+    height: min-content;
+    font-size: 9em;
+  }
+}
+
+input {
+  border: 2px solid rgb(95, 47, 25);
+  border-radius: 5px;
+}
+textarea {
+  border: 2px solid rgb(95, 47, 25);
+  border-radius: 5px;
+}
+
+.card {
+  background-color: antiquewhite;
+}
+
+.small-card {
+  position: relative;
+  overflow: hidden;
+  .row {
+    height: 100%;
+  }
+  h2 {
+    font-size: 2.4em;
+  }
+  .read-more-btn {
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    height: 100%;
+
+    object-fit: cover;
+  }
+  @media (max-width: 735px) {
+    img {
+      height: 280px;
+      width: 100%;
+    }
+  }
+  .details {
+    height: 100%;
+    align-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4em;
+
+    p {
+      font-size: 1.5em;
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1260px) {
+    .details {
+      grid-template-columns: 1fr;
+      p {
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+.card-expanded {
+  box-shadow: 0 0 700px 300px rgba(104, 90, 81, 0.555);
+  position: absolute;
+  // height: 90vh;
+  width: 70%;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  img {
+    height: 100%;
+
+    object-fit: cover;
+  }
+  .edit-btn {
+    font-size: 2.3em;
+    cursor: pointer;
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
+  }
+  .delete-btn {
+    font-size: 2.3em;
+    cursor: pointer;
+    position: absolute;
+    top: 0.7em;
+    right: 2.5em;
+  }
+  .details {
+    display: flex;
+    gap: 2em;
+    flex-direction: row;
+    .detail {
+      display: flex;
+      gap: 0.7em;
+      align-items: baseline;
+      h6 {
+      }
+    }
+  }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    h2 {
+      font-size: 3.7em;
+    }
+    //
+
+    .main-content {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 2em;
+
+      .ingredients {
+        width: fit-content;
+        .ingredient {
+          display: flex;
+
+          gap: 1em;
+        }
+      }
+      .directions {
+        height: 500px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 2em;
+        padding-bottom: 2em;
+      }
+    }
+
+    input,
+    textarea {
+      background-color: rgb(241, 224, 201);
+    }
+
+    .title-input {
+      width: 70%;
+    }
+    .detail-input {
+      width: 25%;
+    }
+    .ingredient-input {
+      margin-right: 0;
+      margin: 0.3em 0;
+    }
+    .quantity-input {
+      width:3em;
+    }
+    .editing-ingredient {
+      justify-content: space-between;
+    }
+    .direction-input {
+      width: 100%;
+      // height: 100px;
+    }
+  }
+}
