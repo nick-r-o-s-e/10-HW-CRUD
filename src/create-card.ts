@@ -1,6 +1,6 @@
 import { Recipe } from "./types";
-import axios from "axios";
 import { showExpandedCard } from "./expanded-card";
+import { outOfDivClickDetect } from "./click-detect";
 
 export const createCard = (recipe: Recipe) => {
   //CARD ELEMENT
@@ -14,6 +14,7 @@ export const createCard = (recipe: Recipe) => {
   const index = document.querySelectorAll(".card").length;
   readMoreBtn.addEventListener("click", () => {
     showExpandedCard(recipe, index);
+    outOfDivClickDetect("fa-book-open", "card-expanded", "card-expanded");
   });
 
   const rowDiv = document.createElement("div");
@@ -23,11 +24,12 @@ export const createCard = (recipe: Recipe) => {
   //CARD IMAGE
   const imgCol = document.createElement("div");
   imgCol.classList.add("col-md-12", "col-lg-6", "img-col");
-
+  imgCol.classList.add("image-col");
   const image = <HTMLImageElement>document.createElement("img");
   image.classList.add("img-fluid", "rounded-start");
   image.src = recipe.image;
-
+  image.setAttribute("alt", "");
+  image.setAttribute("loading", "lazy");
   imgCol.appendChild(image);
   rowDiv.appendChild(imgCol);
 

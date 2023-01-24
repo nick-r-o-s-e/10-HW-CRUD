@@ -97,6 +97,58 @@
         "Dust with powdered sugar and serve immediately."
       ],
       "id": 2
+    },
+    {
+      "directions": [
+        "Make cake: Preheat oven to 350º. Grease a 9\"-x-13\" pan with cooking spray and dust with cocoa powder. Prepare chocolate cake mix according to package directions and bake until a toothpick inserted in the center comes out clean, 25 to 30 minutes. Let cool completely.",
+        "Poke cake all over with the handle of a wooden spoon. In a small bowl, mix together sweetened condensed milk and melted chocolate. Pour mixture into the holes.",
+        "Make frosting: In a large bowl using a hand mixer, beat butter, powdered sugar, cocoa powder, vanilla, and salt. Beat in heavy cream, adding more by the tablespoon until consistency is creamy but can hold peaks.",
+        "Spread frosting all over cake with an offset spatula and sprinkle with chocolate shavings."
+      ],
+      "ingredients": [
+        [
+          "1",
+          "Cooking spray"
+        ],
+        [
+          "3c.",
+          "Cocoa powder "
+        ],
+        [
+          "1",
+          "box chocolate cake mix, plus"
+        ],
+        [
+          "1 (14-oz.)",
+          "can sweetened condensed milk"
+        ],
+        [
+          "1 c.",
+          "semisweet chocolate chips, melted Chocolate shavings, for garnish"
+        ],
+        [
+          "1 c.",
+          "butter, softened"
+        ],
+        [
+          "2 1/2 c.",
+          "powdered sugar"
+        ],
+        [
+          "2 tsp.",
+          "pure vanilla extract Pinch of kosher salt"
+        ],
+        [
+          "1/4 c.",
+          "heavy cream (plus more if necessary)"
+        ]
+      ],
+      "title": "Chocolate cake",
+      "image": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-death-by-chocolate-poke-cake-vertical-1543536011.jpg?crop=1xw:1xh;center,top&resize=980:*",
+      "servings": "12",
+      "prepTime": "20",
+      "coocTime": "70",
+      "id": 3
     }
   ]
 }

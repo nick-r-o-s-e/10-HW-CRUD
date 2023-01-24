@@ -15,22 +15,24 @@ body {
   grid-template-columns: 1fr 1fr;
   width: 1400px;
   gap: 40px;
+
   @media screen and (max-width: 735px) {
     grid-template-columns: 1fr;
   }
 }
 
 .add-recipe {
-cursor: pointer;
+  cursor: pointer;
   border-radius: 6px;
   background-color: #615d5bc0;
   align-self: stretch;
   justify-self: stretch;
   width: 100%;
-  height: 350px;
+  height: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
+
   i {
     pointer-events: none;
     height: min-content;
@@ -42,6 +44,7 @@ input {
   border: 2px solid rgb(95, 47, 25);
   border-radius: 5px;
 }
+
 textarea {
   border: 2px solid rgb(95, 47, 25);
   border-radius: 5px;
@@ -54,12 +57,16 @@ textarea {
 .small-card {
   position: relative;
   overflow: hidden;
+  
   .row {
     height: 100%;
   }
+
   h2 {
+    margin-right: 1em;
     font-size: 2.4em;
   }
+
   .read-more-btn {
     font-size: 1.5em;
     cursor: pointer;
@@ -67,6 +74,7 @@ textarea {
     top: 0.7em;
     right: 0.7em;
   }
+
   .card-body {
     display: flex;
     flex-direction: column;
@@ -75,10 +83,20 @@ textarea {
     width: 100%;
   }
 
-  img {
-    height: 100%;
+  .image-col {
+    background-image: url("./assets/images/image-placeholder.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
+  img {
+    max-height: 330px;
+    height: 100%;
+    min-width: 100%;
     object-fit: cover;
+    border-right: 2px solid rgba(156, 94, 65, 0.438);
+
   }
   @media (max-width: 735px) {
     img {
@@ -86,6 +104,7 @@ textarea {
       width: 100%;
     }
   }
+
   .details {
     height: 100%;
     align-content: space-around;
@@ -97,9 +116,11 @@ textarea {
       font-size: 1.5em;
     }
   }
+
   @media (min-width: 992px) and (max-width: 1260px) {
     .details {
       grid-template-columns: 1fr;
+
       p {
         font-size: 1.3em;
       }
@@ -110,17 +131,23 @@ textarea {
 .card-expanded {
   box-shadow: 0 0 700px 300px rgba(104, 90, 81, 0.555);
   position: absolute;
-  // height: 90vh;
   width: 70%;
-
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  .image-col {
+    background-image: url("./assets/images/image-placeholder.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
   img {
     height: 100%;
-
     object-fit: cover;
   }
+
   .edit-btn {
     font-size: 2.3em;
     cursor: pointer;
@@ -128,6 +155,7 @@ textarea {
     top: 0.7em;
     right: 0.7em;
   }
+
   .delete-btn {
     font-size: 2.3em;
     cursor: pointer;
@@ -135,26 +163,28 @@ textarea {
     top: 0.7em;
     right: 2.5em;
   }
+
   .details {
     display: flex;
     gap: 2em;
     flex-direction: row;
+
     .detail {
       display: flex;
       gap: 0.7em;
+      flex-wrap: wrap;
       align-items: baseline;
-      h6 {
-      }
     }
   }
+
   .card-body {
     display: flex;
     flex-direction: column;
     gap: 2em;
+
     h2 {
       font-size: 3.7em;
     }
-    //
 
     .main-content {
       display: grid;
@@ -163,18 +193,38 @@ textarea {
 
       .ingredients {
         width: fit-content;
+        max-height: 500px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding-right: 1em;
+
         .ingredient {
           display: flex;
-
           gap: 1em;
         }
+        .add-ingredient{
+          cursor: pointer;
+          font-size: 1.7em;
+          margin-left: 50%;
+          margin-top: 0.6em;
+          transform: translateX(-50%)
+        }
       }
+
       .directions {
         height: 500px;
         overflow-x: hidden;
         overflow-y: auto;
         padding-right: 2em;
         padding-bottom: 2em;
+
+        .add-direction {
+          cursor: pointer;
+          font-size: 1.7em;
+          margin-left: 50%;
+          margin-top: 0.6em;
+          transform: translateX(-50%)
+        }
       }
     }
 
@@ -186,22 +236,127 @@ textarea {
     .title-input {
       width: 70%;
     }
+
     .detail-input {
       width: 25%;
     }
+
     .ingredient-input {
       margin-right: 0;
       margin: 0.3em 0;
     }
+
     .quantity-input {
-      width:3em;
+      width: 3.5em;
+      margin: 0.3em 0;
     }
+
     .editing-ingredient {
       justify-content: space-between;
+      position: relative;
+      display: flex;
     }
+
+    .delete-ingredient-editing-button {
+      cursor: pointer;
+      height: min-content;
+      align-self: center;
+    }
+
+    .editing-direction{
+      position: relative;
+    }
+
+    .delete-direction-editing-button {
+      cursor: pointer;
+      height: min-content;
+      position: absolute;
+      top: 0.3em;
+      left: 5em;
+    }
+
     .direction-input {
       width: 100%;
-      // height: 100px;
     }
+  }
+}
+
+form {
+  position: absolute;
+  box-shadow: 0 0 700px 300px rgba(104, 90, 81, 0.555);
+  position: absolute;
+  background-color: antiquewhite;
+  width: 70%;
+  border-radius: 0.6em;
+  padding: 1.7em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .form-title {
+    width: 40%;
+  }
+
+  .form-image-url-div {
+    width: 40% !important;
+  }
+
+  .form-details {
+    width: 50%;
+    display: flex;
+    gap: 1.5em;
+
+    div {
+      margin-bottom: 0 !important;
+    }
+
+    input {
+      border-radius: 0 5px 5px 0 !important;
+    }
+
+    span {
+      padding-left: 0.3em;
+      display: flex;
+      align-items: end;
+    }
+  }
+
+  .main-content {
+    display: flex;
+    gap: 2.7em;
+  }
+
+  .form-ingredients {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: wrap;
+    width: 40%;
+
+    .form-ingredient-quantity {
+      max-width: 5.5em;
+    }
+  }
+  .form-directions {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    flex-wrap: wrap;
+    width: 60%;
+    position: relative;
+
+    .delete-direction {
+      font-size: 1.3em;
+      position: absolute;
+      top: 0.6em;
+      right: 0.6em;
+    }
+  }
+  
+  i {
+    cursor: pointer;
+    font-size: 1.6em;
+    width: min-content;
+    align-self: center;
   }
 }

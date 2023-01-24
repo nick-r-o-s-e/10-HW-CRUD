@@ -16,7 +16,14 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/styles.css" />
-    <script src="https://kit.fontawesome.com/e2115fd39c.js" crossorigin="anonymous"></script>
+    <style>
+      .form-control:focus{border-color: rgb(95, 47, 25);  box-shadow: none; -webkit-box-shadow: none; border-width: 2px;}
+      .has-error .form-control:focus{box-shadow: none; -webkit-box-shadow: none;}
+      </style>
+    <script
+      src="https://kit.fontawesome.com/e2115fd39c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>CrudCards</title>
   </head>
   <body>
@@ -24,11 +31,145 @@
       <div class="container__recipes"></div>
     </div>
 
+    <form action="submit" style="display: none;" class="new-recipe-form" id="add-recipe">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control form-title"
+          id="floatingInput"
+          placeholder="Title"
+          required
+          oninvalid="this.setCustomValidity('Enter Title of your recipe')"
+          oninput="this.setCustomValidity('')"
+        />
+        <label for="floatingInput">Title</label>
+      </div>
+
+      <hr />
+
+      <div class="input-group mb-3 form-image-url-div">
+        <span class="input-group-text" id="basic-addon1">URL</span>
+        <input type="text" class="form-control form-image-url-input" placeholder="Image URL" aria-label="ImageUrl" aria-describedby="basic-addon1">
+      </div>
+
+      <hr />
+
+      <div class="form-details">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Servings</span
+          >
+          <input
+            type="text"
+            class="form-control rounded-right form-servings"
+            aria-label="Servings input"
+            aria-describedby="inputGroup-sizing-default"
+            required
+            oninvalid="this.setCustomValidity('Enter quantity of the servings')"
+          oninput="this.setCustomValidity('')"
+          />
+          <span>qty</span>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Prep time</span
+          >
+          <input
+            type="text"
+            class="form-control form-prep-time"
+            aria-label="Prep time input"
+            aria-describedby="inputGroup-sizing-default"
+            required
+            oninvalid="this.setCustomValidity('Enter prep time in minutes')"
+          oninput="this.setCustomValidity('')"
+          />
+          <span>mins</span>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default"
+            >Cooc time</span
+          >
+          <input
+            type="text"
+            class="form-control form-cooc-time"
+            aria-label="Cooc time input"
+            aria-describedby="inputGroup-sizing-default"
+            required
+            oninvalid="this.setCustomValidity('Enter cooc time in minutes')"
+          oninput="this.setCustomValidity('')"
+          />
+          <span>mins</span>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="main-content">
+        <div class="form-ingredients">
+          <h3>Ingredients</h3>
+          <div class="ingredients-fields">
+            <div class="input-group mb-3 ingredient-form-input">
+              <input
+                type="text"
+                class="form-control form-ingredient-quantity"
+                placeholder="Quantity"
+                aria-label="Quantity"
+                required
+                oninvalid="this.setCustomValidity('Enter quantity of the ingredient')"
+          oninput="this.setCustomValidity('')"
+              />
+  
+              <input
+                type="text"
+                class="form-control form-ingredient-text"
+                placeholder="Ingredient"
+                aria-label="Ingredient"
+                required
+                oninvalid="this.setCustomValidity('Enter the ingredient')"
+                oninput="this.setCustomValidity('')"
+              />
+              <button
+                class="delete-ingredient btn btn-outline-secondary"
+                type="button"
+                
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+          
+          <i class="add-ingredient fa-solid fa-circle-plus"></i>
+        </div>
+        <div class="form-directions">
+          <h3>Directions</h3>
+          <div class="directions-fields">
+            <div class="input-group mb-3 direction-form-input">
+              <div class="form-floating">
+                <textarea
+                  class="form-control form-direction"
+                  placeholder="Step 1"
+                  id="floatingTextarea2"
+                  style="height: 100px"
+                  required
+                  oninvalid="this.setCustomValidity('Describe direction')"
+                oninput="this.setCustomValidity('')"
+                ></textarea>
+                <i class="delete-direction fa-solid fa-trash-can"></i>
+                <label for="floatingTextarea2">Step 1</label>
+              </div>
+            </div>
+          </div>
+          
+          <i class="add-direction fa-solid fa-circle-plus"></i>
+        </div>
+      </div>
+      <button class="btn btn-dark" type="submit">Submit form</button>
+    </form>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <script src="/scripts.js"></script>
+    <script src="/scripts.js" defer></script>
   </body>
 </html>

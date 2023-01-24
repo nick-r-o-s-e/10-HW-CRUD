@@ -1,30 +1,21 @@
 import { Recipe } from "./types";
 import { turnOnEditMode } from "./editing-mode";
-import { deleteRecipe } from "./delete-recipe";
-
 
 export const showExpandedCard = (recipe: Recipe, index: number) => {
-  const otherSmallCards = document.querySelectorAll(".small-card");
-  otherSmallCards.forEach((card: HTMLDivElement, i) => {
-    if (i != index) {
-      card.style.pointerEvents = "none";
-    }
-  });
+  (<HTMLDivElement>(
+    document.querySelector(".main-container")
+  )).style.pointerEvents = "none";
   //CARD ELEMENT
   const card = document.createElement("div");
   card.classList.add("card", "mb-3", "card-expanded");
-
+  card.id = "card-expanded";
   const editBtn = document.createElement("i");
   editBtn.classList.add("edit-btn", "fa-solid", "fa-pen-to-square");
   card.appendChild(editBtn);
 
   editBtn.addEventListener("click", () => {
-    turnOnEditMode(index);
-    // console.log(index);
-    
+    turnOnEditMode(index, recipe.id - 1);
   });
-
-  
 
   const rowDiv = document.createElement("div");
   rowDiv.classList.add("row", "g-0");
@@ -33,11 +24,12 @@ export const showExpandedCard = (recipe: Recipe, index: number) => {
   //CARD IMAGE
   const imgCol = document.createElement("div");
   imgCol.classList.add("col-md-3", "img-col");
-
+  imgCol.classList.add("image-col");
+  
   const image = <HTMLImageElement>document.createElement("img");
   image.classList.add("img-fluid", "rounded-start");
   image.src = recipe.image;
-
+  image.setAttribute("alt", "");
   imgCol.appendChild(image);
   rowDiv.appendChild(imgCol);
 
@@ -56,7 +48,6 @@ export const showExpandedCard = (recipe: Recipe, index: number) => {
   title.appendChild(document.createTextNode(recipe.title));
   cardBody.appendChild(title);
 
- 
   //DETAILS
   const details = document.createElement("div");
   details.classList.add("details");
@@ -113,6 +104,8 @@ export const showExpandedCard = (recipe: Recipe, index: number) => {
   ingredientsHeading.appendChild(document.createTextNode("Ingredients"));
   ingredients.appendChild(ingredientsHeading);
 
+  
+
   for (let i = 0; i < recipe.ingredients.length; i++) {
     const qty = recipe.ingredients[i][0];
     const val = recipe.ingredients[i][1];
@@ -144,8 +137,11 @@ export const showExpandedCard = (recipe: Recipe, index: number) => {
   mainContent.appendChild(directions);
 
   const directionsHeading = document.createElement("h3");
+  
   directionsHeading.appendChild(document.createTextNode("Directions"));
   directions.appendChild(directionsHeading);
+
+  
 
   for (let i = 0; i < recipe.directions.length; i++) {
     const step = i + 1;
@@ -156,6 +152,7 @@ export const showExpandedCard = (recipe: Recipe, index: number) => {
     directions.appendChild(item);
 
     const stepNum = document.createElement("h5");
+    stepNum.classList.add("step-title")
     stepNum.appendChild(document.createTextNode(`Step ${String(step)}`));
     item.appendChild(stepNum);
 
